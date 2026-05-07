@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quote | Al Nisr Aluminium &amp; Metal Trading</title>
+<meta name="description" content="Request a detailed quote for aluminium fabrication, rolling shutters, overhead doors or metal supply from Al Nisr Bahrain.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<style>
+.quote-step-panel { display: none; }
+.quote-step-panel.active { display: block; }
+.step-header { border-bottom: 1px solid var(--glass-border); padding-bottom: 1.25rem; margin-bottom: 1.75rem; }
+.step-header h5 { font-weight: 700; margin: 0; }
+.step-header p { color: var(--silver); font-size: 0.9rem; margin: 0.25rem 0 0; }
+.trust-badge { display: flex; align-items: center; gap: 10px; padding: 0.9rem 1rem; border-radius: 10px; background: var(--off-white); border: 1px solid var(--glass-border); margin-bottom: 0.75rem; transition: var(--transition); }
+.trust-badge:hover { border-color: var(--primary); }
+.trust-badge .badge-icon { width: 38px; height: 38px; border-radius: 8px; background: #eff6ff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--primary); font-size: 1rem; }
+.trust-badge p { font-size: 0.82rem; color: var(--silver); margin: 0; }
+.trust-badge h6 { font-size: 0.9rem; font-weight: 700; margin: 0 0 2px; }
+.sidebar-contact-card { background: linear-gradient(135deg, var(--primary-dark), var(--dark)); border-radius: var(--radius); padding: 1.5rem; color: #fff; }
+.sidebar-contact-card h5 { font-weight: 700; color: #fff; }
+.sidebar-contact-card a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; }
+.sidebar-contact-card a:hover { color: #fff; }
+.progress-bar-custom { height: 4px; background: var(--glass-border); border-radius: 2px; margin-bottom: 2rem; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 2px; transition: width 0.4s ease; }
+</style>
+</head>
+<body>
+
+<nav class="an-navbar navbar navbar-expand-lg scrolled">
+<div class="container">
+<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Al Nisr Aluminium & Metal Fabrication"></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="mainNav">
+<ul class="navbar-nav ms-auto align-items-center gap-1">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="metal-trading.html">Metal Trading</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+<li class="nav-item ms-2"><a class="btn btn-quote active" href="request-quote.html">Get a Quote</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div style="background:var(--off-white);border-bottom:1px solid var(--glass-border);padding:2rem 0;margin-top:var(--nav-h)">
+<div class="container">
+<nav aria-label="breadcrumb"><ol class="breadcrumb mb-1"><li class="breadcrumb-item"><a href="index.html" style="color:var(--silver);font-size:0.8rem;text-decoration:none">Home</a></li><li class="breadcrumb-item active" style="font-size:0.8rem;color:var(--charcoal)">Request a Quote</li></ol></nav>
+<h1 style="font-size:1.8rem;font-weight:800;margin:0">Request a <span style="color:var(--primary)">Free Quote</span></h1>
+<p style="color:var(--silver);margin:0.25rem 0 0;font-size:0.95rem">Fill out the form below. Our team responds within 24 hours.</p>
+</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="section-padding bg-light-custom">
+<div class="container">
+<div class="row g-5 align-items-start">
+
+<!-- FORM -->
+<div class="col-lg-8 fade-up">
+<div class="bg-white rounded-4 p-4 p-md-5" style="box-shadow:var(--shadow-lg);border:1px solid var(--glass-border)">
+
+<!-- Step Indicators -->
+<div class="quote-step-indicator mb-1">
+<div class="quote-step-circle active" id="circle-1">1</div>
+<div class="quote-step-line"></div>
+<div class="quote-step-circle" id="circle-2">2</div>
+<div class="quote-step-line"></div>
+<div class="quote-step-circle" id="circle-3">3</div>
+</div>
+<div class="d-flex justify-content-between mb-3" style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--silver)">
+<span>Your Info</span><span>Project Details</span><span>Attachments</span>
+</div>
+<div class="progress-bar-custom"><div class="progress-fill" id="progressFill" style="width:33%"></div></div>
+
+<!-- STEP 1: Contact Info -->
+<div class="quote-step-panel active" id="step-1">
+<div class="step-header"><h5><i class="bi bi-person-circle me-2" style="color:var(--primary)"></i>Your Contact Information</h5><p>Tell us how to reach you regarding this quote.</p></div>
+<div class="row g-3">
+<div class="col-md-6"><div class="form-floating"><input type="text" class="form-control" id="q_name" placeholder="Full Name" required><label for="q_name">Full Name *</label></div></div>
+<div class="col-md-6"><div class="form-floating"><input type="text" class="form-control" id="q_company" placeholder="Company"><label for="q_company">Company / Organization</label></div></div>
+<div class="col-md-6"><div class="form-floating"><input type="email" class="form-control" id="q_email" placeholder="Email" required><label for="q_email">Email Address *</label></div></div>
+<div class="col-md-6"><div class="form-floating"><input type="tel" class="form-control" id="q_phone" placeholder="Phone" required><label for="q_phone">Phone / WhatsApp *</label></div></div>
+<div class="col-12"><div class="form-floating">
+<select class="form-select" id="q_country"><option selected>Bahrain</option><option>Saudi Arabia</option><option>Kuwait</option><option>UAE</option><option>Qatar</option><option>Oman</option><option>Other</option></select>
+<label for="q_country">Country</label>
+</div></div>
+</div>
+<div class="d-flex justify-content-end mt-4"><button class="btn-primary-an btn-next-step">Next: Project Details <i class="bi bi-arrow-right"></i></button></div>
+</div>
+
+<!-- STEP 2: Project Details -->
+<div class="quote-step-panel" id="step-2">
+<div class="step-header"><h5><i class="bi bi-clipboard-data me-2" style="color:var(--primary)"></i>Project Details</h5><p>Describe what you need so we can prepare an accurate quote.</p></div>
+<div class="row g-3">
+<div class="col-md-6"><div class="form-floating">
+<select class="form-select" id="q_category"><option selected>Select Category</option><option>Rolling Shutters</option><option>Sectional Overhead Doors</option><option>Compact / Folding Doors</option><option>Polycarbonate Shutters</option><option>PVC Strip Curtains</option><option>Window Shutters</option><option>Aluminium Windows &amp; Glazing</option><option>Metal Trading / Steel Supply</option><option>Other</option></select>
+<label for="q_category">Product Category *</label>
+</div></div>
+<div class="col-md-6"><div class="form-floating">
+<select class="form-select" id="q_usage"><option selected>Select Usage</option><option>Residential / Villa</option><option>Commercial / Retail</option><option>Industrial / Warehouse</option><option>Hospitality</option><option>Government</option></select>
+<label for="q_usage">Usage Type</label>
+</div></div>
+<div class="col-md-6"><div class="form-floating"><input type="text" class="form-control" id="q_width" placeholder="Width"><label for="q_width">Approximate Width (mm)</label></div></div>
+<div class="col-md-6"><div class="form-floating"><input type="text" class="form-control" id="q_height" placeholder="Height"><label for="q_height">Approximate Height (mm)</label></div></div>
+<div class="col-md-6"><div class="form-floating"><input type="number" class="form-control" id="q_qty" placeholder="Quantity" min="1"><label for="q_qty">Quantity Required</label></div></div>
+<div class="col-md-6"><div class="form-floating">
+<select class="form-select" id="q_timeline"><option selected>Select Timeline</option><option>ASAP (Under 2 weeks)</option><option>1 Month</option><option>2–3 Months</option><option>Flexible</option></select>
+<label for="q_timeline">Required Timeline</label>
+</div></div>
+<div class="col-12"><div class="form-floating"><textarea class="form-control" id="q_notes" placeholder="Additional notes" style="height:120px"></textarea><label for="q_notes">Additional Requirements / Notes</label></div></div>
+</div>
+<div class="d-flex justify-content-between mt-4">
+<button class="btn-outline-an btn-prev-step"><i class="bi bi-arrow-left"></i> Back</button>
+<button class="btn-primary-an btn-next-step">Next: Attachments <i class="bi bi-arrow-right"></i></button>
+</div>
+</div>
+
+<!-- STEP 3: Attachments + Submit -->
+<div class="quote-step-panel" id="step-3">
+<div class="step-header"><h5><i class="bi bi-paperclip me-2" style="color:var(--primary)"></i>Attachments &amp; Submission</h5><p>Upload plans, drawings or photos to help us quote accurately.</p></div>
+<div class="upload-zone mb-4" onclick="document.getElementById('fileUpload').click()">
+<input type="file" id="fileUpload" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx" style="display:none" onchange="showFileNames(this)">
+<div class="mb-3"><i class="bi bi-cloud-upload" style="font-size:2.5rem;color:var(--primary)"></i></div>
+<h6 style="font-weight:700">Drop files here or <span style="color:var(--primary)">click to browse</span></h6>
+<p style="color:var(--silver);font-size:0.85rem;margin:0">Supports PDF, JPG, PNG, DWG, DOC — Max 10MB each</p>
+<div id="fileNames" class="mt-2" style="font-size:0.8rem;color:var(--primary)"></div>
+</div>
+<div class="form-check mb-3">
+<input class="form-check-input" type="checkbox" id="q_whatsapp">
+<label class="form-check-label" for="q_whatsapp" style="font-size:0.9rem">I prefer to be contacted via WhatsApp</label>
+</div>
+<div class="form-check mb-4">
+<input class="form-check-input" type="checkbox" id="q_agree" required>
+<label class="form-check-label" for="q_agree" style="font-size:0.9rem">I agree to Al Nisr contacting me regarding this quote request *</label>
+</div>
+<div id="successMsg" class="alert alert-success d-none" role="alert"><i class="bi bi-check-circle-fill me-2"></i><strong>Quote request submitted!</strong> Our team will contact you within 24 hours.</div>
+<div class="d-flex justify-content-between align-items-center">
+<button class="btn-outline-an btn-prev-step"><i class="bi bi-arrow-left"></i> Back</button>
+<button class="btn-primary-an" id="submitQuote" onclick="submitQuote()">Submit Quote Request <i class="bi bi-send"></i></button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="col-lg-4 fade-up delay-2">
+<div class="position-sticky" style="top:calc(var(--nav-h) + 2rem)">
+
+<!-- Trust badges -->
+<h6 style="font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.75rem;color:var(--silver);margin-bottom:1rem">Why Request From Us</h6>
+<div class="trust-badge"><div class="badge-icon"><i class="bi bi-lightning-charge"></i></div><div><h6>24-Hour Response</h6><p>Our sales team responds to all quote requests within one business day.</p></div></div>
+<div class="trust-badge"><div class="badge-icon"><i class="bi bi-tag"></i></div><div><h6>Transparent Pricing</h6><p>Detailed itemised quotes with no hidden fees or surprises.</p></div></div>
+<div class="trust-badge"><div class="badge-icon"><i class="bi bi-tools"></i></div><div><h6>Expert Consultation</h6><p>Free technical advice from our 48-year experienced engineering team.</p></div></div>
+<div class="trust-badge"><div class="badge-icon"><i class="bi bi-patch-check"></i></div><div><h6>ISO Quality Assured</h6><p>All products certified to international quality standards.</p></div></div>
+
+<!-- Contact Card -->
+<div class="sidebar-contact-card mt-4">
+<h5 class="mb-3">Prefer to Call?</h5>
+<div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-telephone" style="color:#60a5fa"></i><a href="tel:+97317250505">+973 17 250505</a></div>
+<div class="d-flex align-items-center gap-2 mb-3"><i class="bi bi-envelope" style="color:#60a5fa"></i><a href="mailto:info@alnisraluminium.com">info@alnisraluminium.com</a></div>
+<a href="https://wa.me/97317250505" class="btn-primary-an w-100 justify-content-center" style="background:#25D366" target="_blank"><i class="bi bi-whatsapp me-2"></i>WhatsApp Us</a>
+</div>
+
+<!-- Stats -->
+<div class="row g-2 mt-3">
+<div class="col-6"><div class="glass-card text-center p-3"><div style="font-size:1.6rem;font-weight:800;color:var(--primary)">500+</div><div style="font-size:0.7rem;color:var(--silver);text-transform:uppercase;letter-spacing:1px">Projects</div></div></div>
+<div class="col-6"><div class="glass-card text-center p-3"><div style="font-size:1.6rem;font-weight:800;color:var(--primary)">48+</div><div style="font-size:0.7rem;color:var(--silver);text-transform:uppercase;letter-spacing:1px">Years Trust</div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="an-footer">
+<div class="container">
+<div class="row g-4">
+<div class="col-lg-4">
+<div class="footer-logo mb-2"><img src="images/logo.png" alt="Al Nisr Aluminium & Metal Fabrication"></div>
+<p class="mt-3" style="max-width:280px">Bahrain's premier aluminium fabrication and metal trading company since 1976.</p>
+<div class="footer-contact-item"><i class="bi bi-geo-alt"></i><span>P.O. Box 3738, Manama, Kingdom of Bahrain</span></div>
+<div class="footer-contact-item"><i class="bi bi-telephone"></i><a href="tel:+97317250505">+973 17 250505</a></div>
+<div class="footer-contact-item"><i class="bi bi-envelope"></i><a href="mailto:info@alnisraluminium.com">info@alnisraluminium.com</a></div>
+</div>
+<div class="col-6 col-lg-2"><h5>Company</h5><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li><li><a href="request-quote.html">Get a Quote</a></li></ul></div>
+<div class="col-6 col-lg-3"><h5>Products</h5><ul class="footer-links"><li><a href="products.html">Rolling Shutters</a></li><li><a href="products.html">Overhead Doors</a></li><li><a href="products.html">Compact Doors</a></li><li><a href="products.html">PVC Strip Curtains</a></li></ul></div>
+<div class="col-lg-3"><h5>Metal Trading</h5><ul class="footer-links"><li><a href="metal-trading.html">Steel Sections</a></li><li><a href="metal-trading.html">Angles &amp; Channels</a></li><li><a href="metal-trading.html">Flat Bars</a></li><li><a href="metal-trading.html">Round Bars</a></li></ul></div>
+</div>
+<div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+<span>&copy; 2026 Al Nisr Aluminium &amp; Metal Trading. All rights reserved.</span>
+<div class="footer-social"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a></div>
+</div>
+</div>
+</footer>
+
+<a href="https://wa.me/97317250505" class="whatsapp-fab" target="_blank"><i class="bi bi-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+function showFileNames(input) {
+  const names = Array.from(input.files).map(f => f.name).join(', ');
+  document.getElementById('fileNames').textContent = names ? '📎 ' + names : '';
+}
+function submitQuote() {
+  const agree = document.getElementById('q_agree');
+  if (!agree.checked) { agree.focus(); return; }
+  document.getElementById('successMsg').classList.remove('d-none');
+  document.getElementById('submitQuote').disabled = true;
+  document.getElementById('submitQuote').textContent = 'Submitted ✓';
+  window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+}
+// Update progress bar and step circles
+document.querySelectorAll('.btn-next-step').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const steps = ['step-1','step-2','step-3'];
+    const active = document.querySelector('.quote-step-panel.active');
+    const idx = steps.indexOf(active.id);
+    if (idx < steps.length - 1) {
+      active.classList.remove('active');
+      document.getElementById(steps[idx + 1]).classList.add('active');
+      updateProgress(idx + 2);
+    }
+  });
+});
+document.querySelectorAll('.btn-prev-step').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const steps = ['step-1','step-2','step-3'];
+    const active = document.querySelector('.quote-step-panel.active');
+    const idx = steps.indexOf(active.id);
+    if (idx > 0) {
+      active.classList.remove('active');
+      document.getElementById(steps[idx - 1]).classList.add('active');
+      updateProgress(idx);
+    }
+  });
+});
+function updateProgress(step) {
+  const pct = Math.round((step / 3) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  for (let i = 1; i <= 3; i++) {
+    const c = document.getElementById('circle-' + i);
+    c.classList.remove('active', 'done');
+    if (i === step) c.classList.add('active');
+    else if (i < step) c.classList.add('done');
+  }
+}
+</script>
+</body>
+</html>
